@@ -1,0 +1,82 @@
+
+
+/*#pesquisa-grafico div {
+    border:1px solid #ccc;
+    border-radius: 4px;   
+    padding:  21px; 
+}*/
+.criterios{
+	padding: 10px;
+    padding-left: 15px;
+    padding-top: 0px;
+}
+.date-piker{
+	padding: 10px;
+    padding-left: 15px;
+    padding-top: 3px;
+}
+#pesquisa-grafico {
+	
+    width: 50%;	
+	float: left;
+	padding: 10px;
+    padding-top: 3px;
+	position: relative;
+}
+#lista-nLogicos div{
+    border:1px solid #ccc;
+    border-radius: 4px;   
+    padding:  21px; 
+}
+#lista-nLogicos{
+    width: 30%;
+	float: left;
+	padding: 10px;
+    padding-top: 3px;
+	position: fixed;
+}
+#formulario{
+    width: 50%;
+	margin-left: 50%;
+	float: left;
+	padding: 10px;
+	padding-right: 30px;
+    padding-top: 30px;
+    position: fixed;
+    
+}
+span.input {
+	display: block;
+	padding-bottom: 10px;
+	float: left;
+}
+span.input label {
+	font-weight: 100;
+}
+.form-control{
+	height: 31px;
+}
+
+#tipo_nome{
+	margin-top: 10%;
+	padding-bottom: 8%;	
+}
+
+#agenfa_nome{
+	padding-bottom: 7%;
+	margin-top: 9%
+}
+
+
+#n_logico{
+	height: 34px;
+}
+
+#tbFoot{
+	color:red;
+}
+.row{
+	width:680px;
+	padding-top: 3px;
+}
+

@@ -1,0 +1,79 @@
+<div>
+  <div id="pesquisa-grafico">
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" #graficoInicial maxlength="10" placeholder="De Numero Grafico">
+        <input type="text" class="form-control" #graficoFinal maxlength="10" placeholder="Até Numero Grafico">
+      </div>
+
+      <button type="button" class="btn btn-sm btn-success" (click)=" buscaIntervaloGrafico(graficoInicial.value,graficoFinal.value, dateFrom, dateTo)"
+        id="btnPesquisarDoc">PESQUISAR</button>
+
+      <div class="form-group">
+        <div class="checkbox">
+          <label><input type="checkbox" #ckbProd value="" (change) = "verifyCheckProd($event)">Em Produção</label>
+          <label><input type="checkbox" (change) = "showCriterios($event)" >Criterios</label>
+        </div>
+      </div>
+
+    </form>
+
+    <div class="criterios" *ngIf="showCriterio">
+
+      <form class="navbar-form navbar-left" role="search" ngNoForm>
+
+        <div class="row">
+
+          <label><input type="checkbox" value="" (change) = "activeData($event)">Data</label>
+          <label><input type="checkbox" value="" (change) = "activeAgenfa($event)">Agenfa</label>
+          <label><input type="checkbox" value="" (change) = "activeTipo($event)">Tipo Doc</label>
+        </div>
+        <div class="row">      
+           <datetime [ngModel]="dateFrom"
+                      style="float: left"
+                      (ngModelChange)="handleDateFromChange($event)"
+                      [timepicker]="false"
+                      [datepicker]="datepickerOpts"
+                      *ngIf="showData"
+                      class="dataFrom"></datetime>
+            <datetime [(ngModel)]="dateTo"
+                      [timepicker]="false"
+                      [datepicker]="datepickerOpts"
+                      *ngIf="showData"
+                      ></datetime>       
+                    
+        </div>
+        <div class="row">
+          <input type="text" class="form-control" #grafico maxlength="10" placeholder="De agenfa" *ngIf="showAgenfa">
+          <input type="text" class="form-control" #grafico maxlength="10" placeholder="Até agenfa" *ngIf="showAgenfa">
+        </div>
+        <div class="row">
+          <select class="form-control" *ngIf="showTipo">
+            <option></option>
+            <option>NOTA FISCAL</option>
+            <option>DAEMS-27</option>
+            <option>AIDF</option>
+          </select>
+        </div>
+      </form>
+
+    </div>
+
+
+    <div class=" col-sm-12 col-xs-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Panel Heading</div>
+        <div class="panel-body">
+
+          <app-tabela-dados [formulario]="formulario" (childChange)="childValue = $event"></app-tabela-dados>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="formulario">
+    <app-formulario-dados [formulario]="childValue"></app-formulario-dados>
+  </div>
+</div>

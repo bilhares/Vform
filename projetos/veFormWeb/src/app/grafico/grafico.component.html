@@ -1,0 +1,30 @@
+<div>
+  <div id="pesquisa-grafico">
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" #numGrafico maxlength="10" placeholder="Numero Grafico">
+      </div>
+
+      <button type="button" class="btn btn-sm btn-success" (click)="buscaGrafico(numGrafico.value)" id="btnPesquisarDoc">PESQUISAR</button>
+
+      <div class="form-group">
+        <div class="checkbox">
+          <label><input type="checkbox" #ckbProd value="" (change) = "verifyCheck($event)">Em Produção</label>
+        </div>
+      </div>
+    </form>
+    <div class=" col-sm-12 col-xs-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Panel Heading</div>
+        <div class="panel-body">
+          <!--COMPONENTE TABELA DE DADOS -->
+          <app-tabela-dados [formulario] ="formulario" (childChange)="childValue = $event"></app-tabela-dados>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="formulario">
+    <!-- COMPONENTE FORMULARIO PARA VISUALIZAÇÃO DE DADOS -->
+    <app-formulario-dados [formulario]="childValue"></app-formulario-dados>
+  </div>
+</div>

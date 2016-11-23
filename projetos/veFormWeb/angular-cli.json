@@ -1,0 +1,74 @@
+{
+  "project": {
+    "version": "1.0.0-beta.19-3",
+    "name": "ve-form-web"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico",
+        "assets/lupa.png"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.json",
+      "prefix": "app",
+      "mobile": false,
+      "styles": [
+        "styles.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/custom/bootstrap/css/bootstrap-submenu.min.css",
+        "../node_modules/custom/bootstrap/css/navbar-fixed-top.css",
+        "../node_modules/custom/bootstrap/css/bootstrap-theme.min.css",
+        "../node_modules/ng2-datetime/src/vendor/bootstrap-datepicker/bootstrap-datepicker3.min.css",
+        "../node_modules/ng2-datetime/src/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css"
+      ],
+      "scripts": [
+        "../node_modules/custom/bootstrap/js/jquery.min.js",
+        "../node_modules/custom/bootstrap/js/bootstrap.min.js",
+        "../node_modules/custom/bootstrap/js/bootstrap-submenu.min.js",
+        "../node_modules/custom/bootstrap/js/showSubMenu.js",
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/ng2-datetime/src/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js",
+        "../node_modules/ng2-datetime/src/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"
+      ],
+      "environments": {
+        "source": "environments/environment.ts",
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "addons": [],
+  "packages": [],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "prefixInterfaces": false,
+    "inline": {
+      "style": false,
+      "template": false
+    },
+    "spec": {
+      "class": false,
+      "component": true,
+      "directive": true,
+      "module": false,
+      "pipe": true,
+      "service": true
+    }
+  }
+}

@@ -1,0 +1,116 @@
+<form>
+  <fieldset disabled>
+
+    <!-- linha 1 -->
+    <div class="row">
+      <div class="col-md-4">
+        <label for="grafico">Gráfico</label><input type="text" id="grafico" class="form-control" value="{{formulario.grafico}}">
+      </div>
+
+      <div class="col-md-4">
+        <label for="situacao">Situação</label> <input type="text" id="situacao" class="form-control" value="{{formulario.situacao}}">
+      </div>
+      <div class="col-md-4">
+        <label for="transmitido">Transmitido</label> <input type="text" id="transmitido" class="form-control" value="{{formulario.semTransmissao}}">
+      </div>
+    </div>
+
+    <!-- linha 2 -->
+    <div class="row">
+      <div class="col-md-2">
+        <label for="tipo_numero">Tipo</label> <input type="text" id="tipo_numero" class="form-control" value="{{formulario.codTipo}}">
+      </div>
+      <div class="col-md-5">
+        <input type="text" id="tipo_nome" class="form-control" value="{{formulario.tipoDocumento}}">
+      </div>
+      <div class="col-md-5">
+        <label for="num_logico">Nº Logico</label> <input type="text" id="num_logico" class="form-control" value="{{formulario.nLogico}}">
+      </div>
+    </div>
+
+    <!-- linha 3 -->
+    <div class="row">
+      <div class="col-md-3">
+        <label for="tipo_numero">Agenfa</label> <input type="text" id="tipo_numero" class="form-control" value="{{formulario.numAgenfa}}">
+      </div>
+      <div class="col-md-5">
+        <input type="text" id="agenfa_nome" class="form-control" value="{{formulario.descricaoAgenfa}}">
+      </div>
+    </div>
+
+    <!-- linha 4 -->
+    <div class="row">
+      <div class="col-md-3">
+        <label for="data">Data</label> <input type="text" id="data" class="form-control" value="{{formulario.data}}">
+      </div>
+      <div class="col-md-3">
+        <label for="filme">Filme</label> <input type="text" id="filme" class="form-control" value="{{formulario.filme}}">
+      </div>
+      <div class="col-md-3">
+        <label for="foto_g">Foto G.</label> <input type="text" id="foto_g" class="form-control" value="{{formulario.fotograma}}">
+      </div>
+      <div class="col-md-3">
+        <label for="sit_filme">Sit. Filme</label> <input type="text" id="sit_filme" class="form-control" value="{{formulario.situacaoFilme}}">
+      </div>
+    </div>
+
+    <!-- linha 5   -->
+    <div class="row">
+      <div class="col-md-12">
+        <label for="observacao">Obs.:</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <textarea id="observacao" rows="2" class="form-control" value="{{formulario.obs}}"></textarea>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <label for="lote">Lote</label> <input type="text" id="lote" class="form-control" value="{{formulario.numLote}}">
+      </div>
+      <div class="col-md-4">
+        <label for="tipo_lote">Tipo Lote</label> <input type="text" id="tipo_lote" class="form-control" value="{{formulario.tipoLote}}">
+      </div>
+      <div class="col-md-4">
+        <label for="situacao_lote">Situação Lote</label> <input type="text" id="situacao_lote" class="form-control" value="{{formulario.situacaoLote}}">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="observacao">Posição.:</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <textarea id="posicao" rows="2" class="form-control" value="{{formulario.posicao}}"></textarea>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="mensagem">Mensagem</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <textarea id="mensagem" rows="2" class="form-control" value="{{formulario.mensagem}}"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="mensagem"></label>
+      </div>
+    </div>
+  </fieldset>
+  <div class="row">
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-primary" (click)="modal.open()">Abrir imagem</button>
+    </div>
+  </div>
+</form>

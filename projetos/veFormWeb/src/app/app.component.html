@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default navbar-fixed-top" id="menu">
+
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+      aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+    <button id="titulo-projeto">UGDM</button>
+    <!--<a class="navbar-brand" href="home" id="titulo-projeto">UGDM</a>-->
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="dropdown"><a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false"> VeForms<span
+							class="caret"></span>
+					</a>
+
+        <ul class="dropdown-menu">
+          <li><a routerLink="/grafico" routerLinkActive="active" tabindex="0"> Grafico</a>
+            <li><a routerLink="/intervalo-grafico" routerLinkActive="active" tabindex="0">Intervalo Grafico</a>
+              <li><a routerLink="/grafico" routerLinkActive="active" href="grafico" tabindex="0">Logico</a>
+                <li><a routerLink="/grafico" routerLinkActive="active" href="grafico" tabindex="0">Intervalo Logico</a>
+                  <li><a routerLink="/grafico" routerLinkActive="active" href="grafico" tabindex="0">Somente Criterio</a>
+        </ul>
+
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
+          <span class="glyphicon glyphicon-user"></span>Usuario<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="0"><span class="glyphicon glyphicon-off"></span>Sair</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!--/.nav-collapse -->
+</nav>
+
+<router-outlet></router-outlet>

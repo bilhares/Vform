@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nº Lógico</th>
+      <th>Grafico</th>
+      <th>Situação</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let form of formulario">
+    <tr>
+      <td #nLogico>{{form.nLogico}}</td>
+      <td #grafico>{{form.grafico}}</td>
+      <td #situacao>{{form.situacao}}</td>
+      
+      <td><img src="assets/lupa.png" (click)="preencherCampos(form)"/></td>
+    </tr>
+  </tbody>
+</table>

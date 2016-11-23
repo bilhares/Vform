@@ -1,0 +1,21 @@
+#menu{    
+ 
+	border: none;
+	min-width: 769px;
+   	-webkit-box-shadow: 2px 0px 5px 1px rgba(50, 50, 50, 0.31);
+	-moz-box-shadow:    2px 0px 5px 1px rgba(50, 50, 50, 0.31);
+	box-shadow:         2px 0px 5px 1px rgba(50, 50, 50, 0.31);
+}
+/*#navbar{
+    background-color: #aac1b6;
+  
+}*/
+#titulo-projeto{
+     padding: 5px;
+    margin-left: 20px;
+    font-size: 27px;
+    display: inline-block;
+    color: #aac1b6;
+    background-color: inherit;
+    border: none;
+}
