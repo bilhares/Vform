@@ -33,6 +33,26 @@ public class IntervaloGraficoCriterioService {
 		return Response.status(200).entity(listRetorno).build();
 	}
 	
+	@Path("/byIntervaloGraficoAgenfa")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getByIntervaloGraficoAgenfa(RequestBody request){
+		this.listRetorno = this.controller.consultaIntervaloGraficoAgenfa(request.graficoInicial,
+				request.graficoFinal, request.isProducao, request.agenfaInicial, request.agenfaFinal);
+		return Response.status(200).entity(listRetorno).build();
+	}
+	
+	@Path("/byIntervaloGraficoTipoDoc")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getByIntervaloGraficoTipoDoc(RequestBody request){
+		this.listRetorno = this.controller.consultaIntervaloGraficoTipoDoc(request.graficoInicial,
+				request.graficoFinal, request.isProducao,request.tipoDoc);
+		return Response.status(200).entity(listRetorno).build();
+	}
+	
 	@Path("/byIntervaloGraficoDataAgenfa")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -40,6 +60,35 @@ public class IntervaloGraficoCriterioService {
 	public Response getByIntervaloGraficoDataAgenfa(RequestBody request){
 		this.listRetorno = this.controller.consultaIntervaloGraficoDataAgenfa(request.graficoInicial,
 				request.graficoFinal, request.isProducao, request.dataInicial, request.dataFinal, request.agenfaInicial, request.agenfaFinal);
+		return Response.status(200).entity(listRetorno).build();
+	}	
+	
+	@Path("/byIntervaloGraficoDataTipoDoc")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getByIntervaloGraficoDataTipoDoc(RequestBody request){
+		this.listRetorno = this.controller.consultaIntervaloGraficoDataTipoDoc(request.graficoInicial,
+				request.graficoFinal, request.isProducao, request.dataInicial, request.dataFinal, request.tipoDoc);
+		return Response.status(200).entity(listRetorno).build();
+	}	
+	
+	@Path("/byIntervaloGraficoAgenfaTipoDoc")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getByIntervaloGraficoAgenfaTipoDoc(RequestBody request){
+		this.listRetorno = this.controller.consultaIntervaloGraficoAgenfaTipoDoc(request.graficoInicial,
+				request.graficoFinal, request.isProducao, request.agenfaInicial, request.agenfaFinal, request.tipoDoc);
+		return Response.status(200).entity(listRetorno).build();
+	}
+	@Path("/byIntervaloGraficoDataAgenfaTipoDoc")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getByIntervaloGraficoDataAgenfaTipoDoc(RequestBody request){
+		this.listRetorno = this.controller.consultaIntervaloGraficoDataAgenfaTipoDoc(request.graficoInicial,
+				request.graficoFinal, request.isProducao, request.dataInicial, request.dataFinal, request.agenfaInicial, request.agenfaFinal, request.tipoDoc);
 		return Response.status(200).entity(listRetorno).build();
 	}	
 }

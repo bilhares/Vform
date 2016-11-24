@@ -18,6 +18,7 @@ public class RequestBody {
 	@XmlElement public String dataInicial;
 	@XmlElement public String dataFinal;
 	@XmlElement public String agenfaInicial;
-	@XmlElement public String agenfaFinal;		
+	@XmlElement public String agenfaFinal;	
+	@XmlElement public int tipoDoc;
 	
 }
