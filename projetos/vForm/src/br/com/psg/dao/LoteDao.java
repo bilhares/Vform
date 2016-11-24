@@ -22,9 +22,9 @@ public class LoteDao {
 			ResultSet rs = stmt.executeQuery();			
 			rs.next();
 			Lote lote = new Lote();
-			lote.setNumLote(rs.getInt("ID_Exportacao"));
-			lote.setSituacao(rs.getInt("Conferido"));
-			lote.setTipo(rs.getInt("TipoFormulario"));
+			lote.setLote(rs.getInt("ID_Exportacao"));
+			lote.setSituacaoLote(rs.getString("Conferido"));
+			lote.setTipoLote(rs.getString("TipoFormulario"));
 			
 			return lote;
 			
@@ -37,7 +37,7 @@ public class LoteDao {
 	public static void main(String[] args) {
 		LoteDao dao = new LoteDao();
 		Lote l = dao.obterDadosLote("00014701");
-		System.out.println(""+l.getNumLote());
+		System.out.println(""+l.getLote());
 	}
 }
 

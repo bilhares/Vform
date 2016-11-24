@@ -10,25 +10,36 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.psg.controller.CriteriosController;
+import br.com.psg.controller.FormularioControllerCriterios;
 import br.com.psg.model.Formulario;
 import br.com.psg.model.RequestBody;
 
 @Path("/intervaloGCriterio")
 public class IntervaloGraficoCriterioService {
-	private CriteriosController controller;
+	private FormularioControllerCriterios controller;
+	private List<Formulario> listRetorno;
 
 	public IntervaloGraficoCriterioService() {
-		controller = new CriteriosController();
+		controller = new FormularioControllerCriterios();
 	}
 
 	@Path("/byIntervaloGraficoData")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getByIntervaloGraficoData(RequestBody request) throws SQLException {
-		List<Formulario> listRetorno = this.controller.consultaIntervaloGraficoData(request.graficoInicial,
+	public Response getByIntervaloGraficoData(RequestBody request){
+		this.listRetorno = this.controller.consultaIntervaloGraficoData(request.graficoInicial,
 				request.graficoFinal, request.isProducao, request.dataInicial, request.dataFinal);
 		return Response.status(200).entity(listRetorno).build();
 	}
+	
+	@Path("/byIntervaloGraficoDataAgenfa")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getByIntervaloGraficoDataAgenfa(RequestBody request){
+		this.listRetorno = this.controller.consultaIntervaloGraficoDataAgenfa(request.graficoInicial,
+				request.graficoFinal, request.isProducao, request.dataInicial, request.dataFinal, request.agenfaInicial, request.agenfaFinal);
+		return Response.status(200).entity(listRetorno).build();
+	}	
 }

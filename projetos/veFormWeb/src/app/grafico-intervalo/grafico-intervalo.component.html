@@ -6,7 +6,10 @@
         <input type="text" class="form-control" #graficoFinal maxlength="10" placeholder="Até Numero Grafico">
       </div>
 
-      <button type="button" class="btn btn-sm btn-success" (click)=" buscaIntervaloGrafico(graficoInicial.value,graficoFinal.value, dateFrom, dateTo)"
+      <!-- <button type="button" class="btn btn-sm btn-success" (click)=" buscaIntervaloGrafico(graficoInicial.value,graficoFinal.value, dateFrom, dateTo)"
+        id="btnPesquisarDoc">PESQUISAR</button>-->
+
+      <button type="button" class="btn btn-sm btn-success" (click)=" gerenciaBusca(graficoInicial.value,graficoFinal.value, dateFrom, dateTo, agenfaInicial.value, agenfaFinal.value)"
         id="btnPesquisarDoc">PESQUISAR</button>
 
       <div class="form-group">
@@ -15,10 +18,9 @@
           <label><input type="checkbox" (change) = "showCriterios($event)" >Criterios</label>
         </div>
       </div>
-
     </form>
+    <div class="criterios" [hidden]="!showCriterio">
 
-    <div class="criterios" *ngIf="showCriterio">
 
       <form class="navbar-form navbar-left" role="search" ngNoForm>
 
@@ -28,27 +30,21 @@
           <label><input type="checkbox" value="" (change) = "activeAgenfa($event)">Agenfa</label>
           <label><input type="checkbox" value="" (change) = "activeTipo($event)">Tipo Doc</label>
         </div>
-        <div class="row">      
-           <datetime [ngModel]="dateFrom"
-                      style="float: left"
-                      (ngModelChange)="handleDateFromChange($event)"
-                      [timepicker]="false"
-                      [datepicker]="datepickerOpts"
-                      *ngIf="showData"
-                      class="dataFrom"></datetime>
-            <datetime [(ngModel)]="dateTo"
-                      [timepicker]="false"
-                      [datepicker]="datepickerOpts"
-                      *ngIf="showData"
-                      ></datetime>       
-                    
+        <div class="row">
+          <datetime [ngModel]="dateFrom" style="float: left" (ngModelChange)="handleDateFromChange($event)" [timepicker]="false" [datepicker]="datepickerOpts"
+            *ngIf="showData" class="dataFrom"></datetime>
+          <datetime [(ngModel)]="dateTo" [timepicker]="false" [datepicker]="datepickerOpts" *ngIf="showData"></datetime>
+
+        </div>
+        <div class="row" [hidden]="!showAgenfa">
+          <input type="text" class="form-control" #agenfaInicial maxlength="10" placeholder="De agenfa">
+          <input type="text" class="form-control" #agenfaFinal maxlength="10" placeholder="Até agenfa">
+          <!--<input type="text" class="form-control" #agenfaInicial maxlength="10" placeholder="De agenfa" >
+          <input type="text" class="form-control" #agenfaFinal maxlength="10" placeholder="Até agenfa" >
+          <button type="button" (click) = "mostraAgenfa(agenfaInicial.value, agenfaFinal.value)">btn</button>-->
         </div>
         <div class="row">
-          <input type="text" class="form-control" #grafico maxlength="10" placeholder="De agenfa" *ngIf="showAgenfa">
-          <input type="text" class="form-control" #grafico maxlength="10" placeholder="Até agenfa" *ngIf="showAgenfa">
-        </div>
-        <div class="row">
-          <select class="form-control" *ngIf="showTipo">
+          <select class="form-control" *ngIf="showTipo" #tipoDoc>
             <option></option>
             <option>NOTA FISCAL</option>
             <option>DAEMS-27</option>

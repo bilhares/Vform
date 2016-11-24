@@ -1,15 +1,7 @@
 package br.com.psg.model;
 
-public class Filme {
-	private int numFilme;
-	private String situacao;
+public class Filme extends Colecao {
 	
-	public int getNumFilme() {
-		return numFilme;
-	}
-	public void setNumFilme(int numFilme) {
-		this.numFilme = numFilme;
-	}
 	public String getSituacao(int nFilme) {
 		switch (nFilme) {
 		case 0:
@@ -23,11 +15,7 @@ public class Filme {
 			break;
 		}
 		return situacao;
-	}
-	public void setSituacao(String situacao) {
-		this.situacao = situacao;
-	}
-	
+	}	
 	
 	
 }
