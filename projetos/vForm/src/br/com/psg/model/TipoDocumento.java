@@ -1,8 +1,8 @@
 package br.com.psg.model;
 
-public class TipoDocumento {
-	private int tipo;
-	private String descricao;
+public class TipoDocumento extends Colecao{
+	
+	private String descricaoTipoDocumento;
 
 	public String getDescricao(int codTipo) {
 		switch (codTipo) {
@@ -22,25 +22,17 @@ public class TipoDocumento {
 			this.setDescricao("INDEFINIDO");
 			break;
 		}
-		return descricao;
-	}
-
-	public void setTipo(int tipo) {
-		this.tipo = tipo;
-	}		
-	
-	public int getTipo() {
-		return tipo;
+		return descricaoTipoDocumento;
 	}
 
 	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+		this.descricaoTipoDocumento = descricao;
 	}
 
 	public static void main(String[] args) {
 		TipoDocumento t = new TipoDocumento();
-		t.setTipo(1);
-		String doc = t.getDescricao(t.getTipo());
+		t.setTipoDocumento("1");
+		String doc = t.getDescricao( Integer.parseInt(t.getTipo()));
 		System.out.println("" + doc);
 	}
 

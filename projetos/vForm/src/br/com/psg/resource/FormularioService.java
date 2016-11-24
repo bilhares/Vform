@@ -15,20 +15,11 @@ import br.com.psg.model.Formulario;
 import br.com.psg.model.FormularioBase;
 import br.com.psg.model.RequestBody;
 
-/**
- * Classe contendo as pesquisas basicas sem criterio, em produção ou não
- * 
- * @author fsalles
- *
- */
 @Path("/formulario")
 public class FormularioService {
-	FormularioController controller;
-
-	public FormularioService() {
-		controller = new FormularioController();
-	}
-
+	FormularioController controller = new FormularioController();
+	
+	
 	@Path("/getAll")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -37,41 +28,27 @@ public class FormularioService {
 		return Response.status(200).entity(listRetorno).build();
 	}
 
-	/**
-	 * Pesquisa por grafico, consome json com grafico, serie, e verifica se é
-	 * produção
-	 * 
-	 * @param request
-	 * @return
-	 */
 	@Path("/byGrafico")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getByGrafico(RequestBody request) {
-		String numGrafico = request.grafico;
+		String numGrafico  = request.grafico;
 		String serie = request.serie;
-		int prod = request.isProducao;
-		List<Formulario> listRetorno = controller.consultaGrafico(numGrafico, serie, prod);
+		int prod  = request.isProducao;
+		List<Formulario> listRetorno = controller.consultaNumGrafico(numGrafico, serie, prod);		
 		return Response.status(200).entity(listRetorno).build();
 	}
+	
 
-	/**
-	 * Pesquisa por intervalo grafico, consome json com grafico de e até, serie,
-	 * e verifica se é produção
-	 * 
-	 * @param request
-	 * @return
-	 */
-	@Path("/byIntervaloGrafico")
+	@Path("/byLogico")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getByIntervaloGrafico(RequestBody request) {
-		String graficoInicial = request.graficoInicial;
-		String graficoFinal = request.graficoFinal;
+	public Response getNumLogico(RequestBody request){
+		String numLogico = request.logico;
 		int prod = request.isProducao;
-		List<Formulario> listRetorno = controller.consultarGraficoIntervalo(graficoInicial, graficoFinal, prod);
-		return Response.status(200).entity(listRetorno).build();
+		List<Formulario>  formularios = controller.consultaNumLogico(numLogico, prod);
+		return Response.status(200).entity(formularios).build();
 	}
 }
